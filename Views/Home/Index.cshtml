@@ -3,6 +3,24 @@
 }
 
 <div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    <img class="display-4" src="Img/AmazingSeries.jpg">
+    <section style="margin-top:50px;">
+    <div class="row">
+        @foreach (Series item in ViewBag.series_)
+        { 
+            <div class="col-md-4 col-12">
+                <div class="card" style="background-color: rgb(219, 236, 210); border: solid rgb(179, 194, 171) 3px">
+                    <img src="@item.ImagenSerie" class="card-img-top" alt="ll">
+                    <div class="card-body">
+                        <h5 class="card-title">@item.Nombre</h5>
+                        <button type="button" class="btn btn-primary" data-toggle="modal" data-targe="#ModalSerie" onclick="MostrarDetalleSerie(@item.IdSerie)"> Ver Info en Modal</button>
+                        <button type="button" class="btn btn-primary" data-toggle="modal" data-targe="#ModalSerie" onclick="MostrrDetalleActores(@item.IdSerie)"> Ver Info en Modal</button>
+                        <button type="button" class="btn btn-primary" data-toggle="modal" data-targe="#ModalSerie" onclick="MostrarDetalleTemporadas(@item.IdSerie)"> Ver Info en Modal</button>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+
+ </section>
 </div>

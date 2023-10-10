@@ -13,10 +13,7 @@ public class HomeController : Controller
         _logger = logger;
     }
 
-    public IActionResult Index()
-    {
-        return View();
-    }
+    
 
     public IActionResult Privacy()
     {
@@ -28,4 +25,29 @@ public class HomeController : Controller
     {
         return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
     }
+    public IActionResult Index(int IdSerie)
+    {
+        ViewBag.series_=CargarTodasSeries();
+        return View("Index");
+    }
+     [HttpPost]
+     public Series MostrarDetalleSerie(int IdSerie){
+        Series serie_=BD.CargarSerie(IdSerie);
+        return serie_;
+     }
+     [HttpPost]
+      public List <Series> CargarTodasSeries(){
+        List <Series> series_=BD.CargarTodasSeries();
+        return series_;
+     }
+     [HttpPost]
+     public List <Actores> MostrarDetalleActor(int IdSerie){
+         List <Actores> actores_=BD.CargarActores(IdSerie);
+        return actores_;
+     }
+     [HttpPost]
+     public List <Temporadas> MostrarDetalleTemp( int IdSerie){
+        List <Temporadas> temporadas_=BD.CargarTemporada(IdSerie);
+        return temporadas_;
+     }
 }
