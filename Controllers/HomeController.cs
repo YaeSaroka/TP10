@@ -46,7 +46,7 @@ public class HomeController : Controller
         return actores_;
      }
      [HttpPost]
-     public List <Temporadas> MostrarDetalleTemp( int IdSerie){
+     public List <Temporadas> MostrarDetalleTemporadas( int IdSerie){
         List <Temporadas> temporadas_=BD.CargarTemporada(IdSerie);
         return temporadas_;
      }

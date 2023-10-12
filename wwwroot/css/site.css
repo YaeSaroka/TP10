@@ -20,3 +20,16 @@ html {
 body {
   margin-bottom: 60px;
 }
+
+#btn1{
+  background-color:#e6b4bc!important;
+  border: 2px solid #e6b4bc ;
+}
+#btn2{
+  background-color:#b8ca9d!important;
+  border: 2px solid #b8ca9d ;
+}
+#btn3{
+  background-color:#a6c9ce!important;
+  border: 2px solid #a6c9ce ;
+}
