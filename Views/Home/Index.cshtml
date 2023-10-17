@@ -14,8 +14,8 @@
                     <div class="card-body">
                         <h5 class="card-title">@item.Nombre</h5>
                         <button type="button" class="btn btn-primary" id="btn1" data-bs-toggle="modal" data-bs-target="#ModalSerie" onclick="MostrarDetalleTemporadas(@item.IdSerie,'@item.Nombre')">Temporadas</button>
-                        <button type="button" class="btn btn-primary" id="btn2" data-bs-toggle="modal" data-bs-target="#ModalSerie" onclick="MostrarDetalleActores(@item.IdSerie)"> Actores</button>
-                        <button type="button" class="btn btn-primary" id="btn3" data-bs-toggle="modal" data-bs-target="#ModalSerie" onclick="MostrarDetalleSerie(@item.IdSerie)"> Ver Info </button>
+                        <button type="button" class="btn btn-primary" id="btn2" data-bs-toggle="modal" data-bs-target="#ModalSerie" onclick="MostrarDetalleActores(@item.IdSerie, '@item.Nombre')"> Actores</button>
+                        <button type="button" class="btn btn-primary" id="btn3" data-bs-toggle="modal" data-bs-target="#ModalSerie" onclick="MostrarDetalleSerie(@item.IdSerie, '@item.Nombre', @item.AñoInicio, '@item.Sinopsis')"> Ver Info </button>
                     </div>
                 </div>
             </div>
@@ -33,7 +33,7 @@
         <h5 class="modal-title" id="Title"></h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
-      <div class="modal-body" id="cuerpo">
+      <div class="modal-body" id="cuerpomodal">
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>

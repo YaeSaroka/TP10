@@ -42,7 +42,7 @@ public static class BD
         List <Temporadas> temporadas_ = new List<Temporadas>();
         using (SqlConnection db = new SqlConnection(ConnectionString))
         {
-            string sql = "SELECT * FROM Actores WHERE IdSerie = @pIdSerie";
+            string sql = "SELECT * FROM Temporadas WHERE IdSerie = @pIdSerie";
             temporadas_ = db.Query<Temporadas>(sql, new { pIdSerie = IdSerie }).ToList();
         }
         return temporadas_;
